@@ -1,9 +1,6 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron: "0 0 * * *"
 
@@ -17,7 +14,7 @@ jobs:
       - name: Auto green
         run: |
           git config --local user.email "billzhou233@yandex.com"
-          git config --local user.name "bz233-official"
+          git config --local user.name "uni-31356"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           date +"%Y-%m-%d %H:%M:%S.%N" > keepchange.txt
